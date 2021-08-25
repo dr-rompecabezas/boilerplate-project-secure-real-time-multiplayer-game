@@ -20,3 +20,7 @@ canvas {
     flex-direction: row;
   }
 }
+
+img {
+  display: none;
+}
