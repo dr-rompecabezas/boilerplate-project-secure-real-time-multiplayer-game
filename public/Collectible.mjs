@@ -1,6 +1,18 @@
 class Collectible {
   constructor({x, y, value, id}) {
+    this.image = document.getElementById("bitcoin")
+    this.position = {x: x, y: y}
+    this.value = value
+    this.id = id
+    this.size = 16
+  }
 
+  draw(context) {
+    context.drawImage(
+      this.image,
+      this.position.x,
+      this.position.y
+    );
   }
 
 }
