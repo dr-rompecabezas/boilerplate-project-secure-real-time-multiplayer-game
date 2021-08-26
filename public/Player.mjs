@@ -30,7 +30,18 @@ class Player {
   }
 
   collision(item) {
-
+    if (item.position.y <= this.position.y + this.size
+      && item.position.y + item.size >= this.position.y
+      && item.position.x + item.size >= this.position.x
+      && item.position.x <= this.position.x + this.size) {
+      return true
+    }
+    if (item.position.x <= this.position.x + this.size
+      && item.position.x + item.size >= this.position.x
+      && item.position.y + item.size >= this.position.y
+      && item.position.y <= this.position.y + this.size) {
+      return true
+    }
   }
 
   calculateRank(arr) {
