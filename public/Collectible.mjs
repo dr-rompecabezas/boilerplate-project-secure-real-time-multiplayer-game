@@ -1,6 +1,6 @@
 class Collectible {
   constructor({x, y, value, id}) {
-    this.image = document.getElementById("bitcoin")
+    this.image = this.randomizeImage()
     this.position = {x: x, y: y}
     this.value = value
     this.id = id
@@ -13,6 +13,14 @@ class Collectible {
       this.position.x,
       this.position.y
     );
+  }
+
+  randomizeImage() {
+    const bitcoin = document.getElementById("bitcoin")
+    const ethereum = document.getElementById("ethereum")
+    const dollar = document.getElementById("dollar")
+    const imageArray = [bitcoin, ethereum, dollar]
+    return imageArray[Math.floor(Math.random() * 3)]
   }
 
 }
