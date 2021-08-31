@@ -1,5 +1,13 @@
-class Collectible {
-  constructor({x, y, value, id}) {
+import {
+  getRandomInt,
+  LEFT_WALL,
+  RIGHT_WALL,
+  TOP_WALL,
+  BOTTOM_WALL
+} from './canvas.mjs'
+
+export default class Collectible {
+  constructor({x = getRandomInt(LEFT_WALL + 16, RIGHT_WALL - 16), y = getRandomInt(TOP_WALL + 16, BOTTOM_WALL - 16), value = 1, id = Date.now()}) {
     this.image = this.randomizeImage()
     this.position = {x: x, y: y}
     this.value = value
@@ -32,5 +40,3 @@ class Collectible {
 try {
   module.exports = Collectible;
 } catch(e) {}
-
-export default Collectible;

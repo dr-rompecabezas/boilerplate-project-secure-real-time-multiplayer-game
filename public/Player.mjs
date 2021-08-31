@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   LEFT_WALL,
   RIGHT_WALL,
   TOP_WALL,
@@ -6,7 +7,7 @@ import {
 } from './canvas.mjs'
 
 export default class Player {
-  constructor({ x, y, score, id }) {
+  constructor({ x = getRandomInt(LEFT_WALL + 32, RIGHT_WALL - 32), y = getRandomInt(TOP_WALL + 32, BOTTOM_WALL - 32), score = 0, id = Date.now() }) {
     this.image = document.getElementById("cat")
     this.position = { x: x, y: y }
     this.score = score

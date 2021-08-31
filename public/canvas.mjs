@@ -26,8 +26,15 @@ function drawGameScreen(context) {
     BOTTOM_WALL - TOP_WALL)
 }
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
 export {
   drawGameScreen,
+  getRandomInt,
   GAME_WIDTH,
   GAME_HEIGHT,
   LEFT_WALL,

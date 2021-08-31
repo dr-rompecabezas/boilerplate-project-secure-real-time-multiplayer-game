@@ -9,16 +9,16 @@ const runner = require('./test-runner.js');
 
 const app = express();
 
-app.use(
-  helmet({
-    noSniff: true,
-    xssFilter: true,
-    nocache: true,
-    hidePoweredBy: {
-      setTo: "PHP 7.4.3",
-    },
-  })
-);
+// app.use(
+//   helmet({
+//     noSniff: true,
+//     xssFilter: true,
+//     nocache: true,
+//     hidePoweredBy: {
+//       setTo: "PHP 7.4.3",
+//     },
+//   })
+// );
 
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/assets', express.static(process.cwd() + '/assets'));
