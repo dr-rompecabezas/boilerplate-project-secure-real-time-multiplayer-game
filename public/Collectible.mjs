@@ -8,7 +8,6 @@ import {
 
 export default class Collectible {
   constructor({x = getRandomInt(LEFT_WALL + 16, RIGHT_WALL - 16), y = getRandomInt(TOP_WALL + 16, BOTTOM_WALL - 16), value = 1, id = Date.now()}) {
-    this.image = this.randomizeImage()
     this.position = {x: x, y: y}
     this.value = value
     this.id = id
@@ -16,6 +15,8 @@ export default class Collectible {
   }
 
   draw(context) {
+    // this.image = this.randomizeImage()
+    this.image = document.getElementById("bitcoin")
     context.drawImage(
       this.image,
       this.position.x,

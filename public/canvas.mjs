@@ -5,7 +5,7 @@ const RIGHT_WALL = 635
 const TOP_WALL = 40
 const BOTTOM_WALL = 475
 
-function drawGameScreen(context) {
+function drawGameScreen(context, rank) {
   // draw screen
   context.fillStyle = "black"
   context.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT)
@@ -15,7 +15,8 @@ function drawGameScreen(context) {
   context.font = "14px monospace"
   context.fillText("Controls: WASD", 40, 24)
   context.fillText("Coin Race", 290, 24)
-  context.fillText("Rank 1/1", 500, 24)
+  // context.fillText("Rank 1/1", 500, 24)
+  context.fillText(rank, 500, 24)
 
   // draw walls outline
   context.strokeStyle = "white";

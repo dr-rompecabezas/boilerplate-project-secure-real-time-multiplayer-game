@@ -18,7 +18,6 @@ export default class Player {
   movePlayer(dir, speed) {
     this.dir = dir
     this.speed = speed
-    console.log(this.position)
     switch (this.dir) {
       case "left":
         this.position.x - this.speed >= LEFT_WALL ? this.position.x -= this.speed : this.position.x = LEFT_WALL
@@ -55,6 +54,9 @@ export default class Player {
   }
 
   calculateRank(arr) {
+    const sortedScores = arr.sort((a, b) => b.score - a.score);
+    const mainPlayerRank = this.score === 0 ? arr.length : (sortedScores.findIndex(obj => obj.id === this.id) + 1);
 
+    return `Rank: ${mainPlayerRank} / ${arr.length}`
   }
 }
